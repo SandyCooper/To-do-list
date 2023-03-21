@@ -1,0 +1,195 @@
+* {
+  font-family: 'Varela Round', sans-serif;
+}
+body {
+  background-color: rgb(240, 240, 240);
+  position: relative;
+  margin: 0;
+}
+.dark-mode {
+  background-color: rgb(34, 31, 31);
+  min-height: 100vh;
+  color: white;
+}
+.dark-mode-button {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  top: 2rem;
+  right: 6.15rem;
+  border-radius: 100%;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.search {
+  display: flex;
+  /* background-color: lightgreen; */
+  position: absolute;
+  top: 2rem;;
+  left: 6.25rem;
+  width: 10rem;
+  height: 3rem;
+  transition: all 0.5s ease-in-out;
+  transition-delay: 5s;
+}
+.search-e {
+  display: flex;
+  /* background-color: lightgreen; */
+  position: absolute;
+  top: 2rem;;
+  left: 6.15rem;
+  width: 30rem;
+  height: 3rem;
+  transition: all 0.8s cubic-bezier(.50,1.25,0.75,1.20);
+  transition-delay: 0.5s;
+}
+.search-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 3rem;
+  padding: 20px 20px 20px 50px;
+  font-size: 1.25rem;
+  background-image: linear-gradient(to bottom left, #faf7d2,#faf49d);
+  outline: none;
+  border: 2px solid #e4d509;
+}
+.search-input:focus {
+  box-shadow: 0px 0px 5px 5px #f8eb2e6b;
+}
+.search-icon {
+  position: absolute;
+  top: 0.8rem;;
+  left: 1rem;
+  color:black;
+}
+.create-note {
+  background-image: linear-gradient(to bottom left, #f5ee87,#f8eb2e);
+  /* background-position: center;
+  background-size: 200% 200%; */
+  position: absolute;
+  right: 6.15rem;
+  top: 7.5rem;
+  /* background-color: #F5EC78; */
+  width: 20rem;
+  height: 20rem;
+  border: 2px solid #e4d509;
+  border-radius: 1rem;
+  box-shadow: -0.5rem 0.5rem 5px rgba(128, 128, 128, 0.479),-0.75rem 0.75rem 10px rgba(128, 128, 128, 0.322),-1rem 1rem 10px rgba(128, 128, 128, 0.13);
+  color: #272727;
+}
+.new-note-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 85%;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  border: none;
+  padding: 2rem;
+  font-size: 1.25rem;
+}
+.new-note-button {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  box-sizing: border-box;
+  width: 100%;
+  height: 15%;
+  color: #c7bd33;
+  /* border: 1px solid black; */
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.notes-group-area {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  position: absolute;
+  left: 5rem;
+  top: 7.5rem;
+  /* background-color: lightgreen; */
+  width: 50rem;
+  /* border: 1px solid black; */
+}
+/* .red {
+  background-image: url("../images/empty.avif");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  width: 30rem;
+  height: 30rem;
+  background-color: transparent;
+} */
+.single-note {
+  background-image: linear-gradient(to bottom left,pink,rgb(241, 150, 166));
+  position: relative;
+  box-sizing: border-box;
+  /* background-color: pink; */
+  width: 15rem;
+  margin: 0rem 0rem 1rem 1.25rem;
+  word-wrap: break-word;
+  border-radius: 0.5rem;
+  border: 2px solid rgb(235, 141, 156);
+  box-shadow: -0.2rem 0.2rem 5px rgba(128, 128, 128, 0.479),-0.4rem 0.4rem 10px rgba(128, 128, 128, 0.322),-0.6rem 0.6rem 10px rgba(128, 128, 128, 0.13);
+}
+.single-note-text {
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 100%;
+  font-size: 1.15rem;
+  color: #272727;
+}
+.single-note-date {
+  box-sizing: border-box;
+  padding: 0.75rem 0.75rem 0.75rem 1rem;
+  width: 50%;
+  font-size: 0.8rem;
+  color: rgb(206, 94, 112)
+}
+.single-note-delete-button {
+  position: absolute;
+  right: 0rem;
+  bottom: 0rem;
+  width: 40%;
+  text-align: right;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  color: rgb(224, 125, 141);
+}
+.reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 11rem;
+  top: 2rem;
+  width: 7rem;
+  height: 3rem;
+}
+.reset-button {
+  background-image: linear-gradient(to bottom left,rgb(253, 211, 218),rgb(253, 177, 191));
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgb(235, 141, 156);
+  border-radius: 3rem;
+  cursor: pointer;
+  color: #272727;
+}
+.reset-button span {
+  position: absolute;
+  top: 13px;
+  left: 20px;
+  font-size: 1.1rem;
+}
+.reset-button .reset-icon {
+  position: absolute;
+  top: 11px;
+  left: 70px;
+}
