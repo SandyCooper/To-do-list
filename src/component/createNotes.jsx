@@ -1,8 +1,12 @@
-import React,{useState} from "react";
+import React,{useContext, useState} from "react";
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { UserContext } from "./simplyfy";
 
 
-function CreateNote({onClick}){
+function CreateNote(){
+
+    const {addnotes} = useContext(UserContext);
+
 
     const [newDos,setNewDos] = useState("");
 
@@ -13,7 +17,7 @@ function CreateNote({onClick}){
 
     function handleAddClick(){
         if(newDos !== ""){
-            onClick(newDos);
+            addnotes(newDos);
             setNewDos("");
         }
     }

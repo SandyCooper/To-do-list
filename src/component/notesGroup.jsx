@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import SingleNote from "./singleNote";
+import { UserContext } from "./simplyfy";
 
 
-function NotesGroup({notes,handleOneDelete,isBgImage}){
+function NotesGroup(){
+
+    const {nootes,searchnotes} = useContext(UserContext);
+    let notes = nootes.filter(note => note.text.toLowerCase().includes(searchnotes))
+
         return (<div className="notes-group-area">
-        {isBgImage ? <div className="red"></div> : (notes.map((note,i) => {
+        {notes.map((note,i) => {
             return(
-                <SingleNote key={i} id={note.id} text={note.text} date={note.date} handleOneDelete={handleOneDelete}/>
+                <SingleNote key={i} id={note.id} text={note.text} date={note.date}/>
             );
-        }))}
+        })}
     </div>);
 }
 

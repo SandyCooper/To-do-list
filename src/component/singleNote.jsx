@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import DeleteIcon from '@mui/icons-material/Delete';
+import {UserContext} from "./simplyfy";
 
 
-function SingleNote({id,text,date,handleOneDelete}){
+function SingleNote({id,text,date}){
+
+    const {deleteonenote} = useContext(UserContext);
 
     function handleSingleDeleteClick(){
-        handleOneDelete(id);
+        deleteonenote(id);
     }
 
     return(

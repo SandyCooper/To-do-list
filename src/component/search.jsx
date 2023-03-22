@@ -1,19 +1,18 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import SearchIcon from '@mui/icons-material/Search';
+import { UserContext } from "./simplyfy";
 
 
 function Search({handleSearch,searchNotes}){
 
-    const [searchBar,setSearchBar] = useState(false)
+    const {searchnotes,setsearchnotes} = useContext(UserContext);
 
-    function handleMouseOut(){
-        setSearchBar(false);
-    }
+    const [searchBar,setSearchBar] = useState(false)
 
     function handleSearchChange(event){
         const {value} = event.target;
         console.log(value);
-        handleSearch(value);
+        setsearchnotes(value);
         if(value === ""){
             setSearchBar(false);
         } else {
@@ -22,9 +21,9 @@ function Search({handleSearch,searchNotes}){
     }
 
     return(
-        <div onMouseOver={() => setSearchBar(true)} onMouseOut={handleMouseOut} className={`${searchBar ? "search-e" : "search"}`}>
+        <div onMouseOver={() => setSearchBar(true)} onMouseOut={() => setSearchBar(false)} className={`${searchBar ? "search-e" : "search"}`}>
             <div className="search-icon"><SearchIcon /></div>
-            <input className="search-input" type="text" onChange={handleSearchChange} value={searchNotes} placeholder="Search"></input>
+            <input className="search-input" type="text" onChange={handleSearchChange} value={searchnotes} placeholder="Search"></input>
         </div>
     );
 }
