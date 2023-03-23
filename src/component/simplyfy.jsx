@@ -1,5 +1,6 @@
-import React,{createContext,useState, useReducer} from "react";
+import React,{createContext,useState, useReducer, useEffect} from "react";
 import { nanoid } from 'nanoid';
+import useLocalStorage from "./useLocalStorage";
 
 export const UserContext = createContext();
 
@@ -52,6 +53,10 @@ export default function Simplyfy({children}){
       date:"today"
     }
   ]);
+
+    const [seton,setSeton] = useLocalStorage("react-todo-datas",notes);
+
+    useEffect(() => { return setSeton(notes)},[notes]);
   
     const [darkMode,setDarkMode] = useState(false);
     const [searchNotes,setSearchNotes] = useState("");
@@ -63,7 +68,7 @@ export default function Simplyfy({children}){
 
 
     return (
-        <UserContext.Provider value={{nootes:notes,searchnotes:searchNotes,setsearchnotes:setSearchNotes,handledarkmode:handleDarkMode,disPatch:dispatch}}>
+        <UserContext.Provider value={{nootes:seton,searchnotes:searchNotes,setsearchnotes:setSearchNotes,handledarkmode:handleDarkMode,disPatch:dispatch}}>
         <div className={`${darkMode && "dark-mode"}`}>
             {children}
         </div>

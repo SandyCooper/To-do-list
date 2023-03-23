@@ -13,8 +13,6 @@ import Toggle from "./component/toggle";
 function App() {
 
   return (
-
-
     <Simplyfy>
 
       <Toggle />

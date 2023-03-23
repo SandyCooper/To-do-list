@@ -81,6 +81,11 @@ body {
   box-shadow: -0.5rem 0.5rem 5px rgba(128, 128, 128, 0.479),-0.75rem 0.75rem 10px rgba(128, 128, 128, 0.322),-1rem 1rem 10px rgba(128, 128, 128, 0.13);
   color: #272727;
 }
+textarea::placeholder {
+  color: #afa62c;
+  font-size: 1rem;
+  text-align: center;
+}
 .new-note-input {
   box-sizing: border-box;
   width: 100%;
@@ -126,6 +131,7 @@ body {
   background-color: transparent;
 } */
 .single-note {
+  color: rgb(83, 83, 83);
   background-image: linear-gradient(to bottom left,pink,rgb(241, 150, 166));
   position: relative;
   box-sizing: border-box;
@@ -139,6 +145,7 @@ body {
   box-shadow: -0.2rem 0.2rem 5px rgba(128, 128, 128, 0.479),-0.4rem 0.4rem 10px rgba(128, 128, 128, 0.322),-0.6rem 0.6rem 10px rgba(128, 128, 128, 0.13);
 }
 .single-note:hover {
+  color: #272727;
   scale: 1.05;
   transition: 0.2s ease-in-out;
 }
@@ -147,7 +154,7 @@ body {
   padding: 1rem;
   width: 100%;
   font-size: 1.15rem;
-  color: #272727;
+  /* color: #272727; */
 }
 .single-note-date {
   box-sizing: border-box;
