@@ -6,7 +6,7 @@ import { UserContext } from "./simplyfy";
 function NotesGroup(){
 
     const {nootes,searchnotes} = useContext(UserContext);
-    let notes = nootes.filter(note => note.text.toLowerCase().includes(searchnotes))
+    const notes = nootes.filter(note => {return note.text.toLowerCase().includes(searchnotes)})
 
         return (<div className="notes-group-area">
         {notes.map((note,i) => {
