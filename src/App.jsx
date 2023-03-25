@@ -5,6 +5,7 @@ import CreateNote from "./component/createNotes";
 import NotesGroup from "./component/notesGroup";
 import Simplyfy from "./component/simplyfy";
 import Toggle from "./component/toggle";
+import AddButton from "./component/addButton";
 
 
 
@@ -20,6 +21,7 @@ function App() {
       <Search />
       <CreateNote />
       <NotesGroup />
+      <AddButton />
 
     </Simplyfy>
   );

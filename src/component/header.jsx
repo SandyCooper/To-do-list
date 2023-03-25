@@ -5,12 +5,14 @@ import { ACTION, UserContext } from "./simplyfy";
 
 function Header(){
 
-    const {disPatch} = useContext(UserContext);
+    const {disPatch,winWidth,overLay} = useContext(UserContext);
 
     return(
-        <div className="reset">
-            <div className="reset-button" onClick={() => disPatch({type:ACTION.DELETE_ALL_NOTES})}><span>Reset</span> <span className="reset-icon"><RestartAltIcon /></span></div>
-        </div>
+        <>
+        {overLay ? null : <div className="reset">
+            <div className="reset-button" onClick={() => disPatch({type:ACTION.DELETE_ALL_NOTES})}><span>Reset</span> {winWidth < 501 ? null : <span className="reset-icon"><RestartAltIcon /></span>}</div>
+        </div>}
+        </>
     );
 }
 
