@@ -11,8 +11,8 @@ function Search(){
 
     function handleSearchChange(event){
         const {value} = event.target;
-        console.log(value);
-        setsearchnotes(value);
+        // console.log(value);
+        setsearchnotes(value.toLowerCase());
         if(value === ""){
             setSearchBar(false);
         } else {

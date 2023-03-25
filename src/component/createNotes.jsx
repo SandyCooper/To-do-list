@@ -12,7 +12,8 @@ function CreateNote(){
 
     function handleNewNoteChange(event){
         const {value} = event.target;
-        setNewDos(value);
+        // console.log(value.toLowerCase());
+        setNewDos(value.toLowerCase());
     }
 
     function handleAddClick(){
