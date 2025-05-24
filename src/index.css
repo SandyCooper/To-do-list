@@ -133,7 +133,7 @@
   } */
   .single-note {
     color: rgb(83, 83, 83);
-    background-image: linear-gradient(to bottom left,pink,rgb(241, 150, 166));
+    background-image: linear-gradient(to top right,pink,rgb(241, 150, 166));
     position: relative;
     box-sizing: border-box;
     /* background-color: pink; */
